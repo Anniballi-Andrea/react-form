@@ -28,7 +28,7 @@ function App() {
         <div className="col sm-6">
           <div className="card mt-5 pt-3">
             <h5 className='px-3'>LIST OF FAVORITE BOARD GAMES: </h5>
-            <ArticlesList array={boardGames} />
+            <ArticlesList array={boardGames} setArray={setBoardGames} />
           </div>
         </div>
 

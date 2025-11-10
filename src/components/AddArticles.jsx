@@ -7,9 +7,15 @@ export default function AddArtcles({ array, setArray }) {
 
     const handleAddObject = event => {
         event.preventDefault()
+        if (article !== "") {
+            const newArticles = [...array, { name: article, id: array.length + 1 }]
+            setArray(newArticles)
+            setArticle("")
+        } else {
 
-        const newArticles = [...array, { name: article, id: array.length + 1 }]
-        setArray(newArticles)
+            alert("please insert a board game")
+        }
+
 
 
 
