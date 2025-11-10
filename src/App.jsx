@@ -1,9 +1,10 @@
+import { useState } from "react"
 import AddArtcles from "./components/AddArticles"
 import ArticlesList from "./components/ArticlesList"
 
 function App() {
 
-  const boardGames =
+  const [boardGames, setBoardGames] = useState(
     [
       {
         name: "monopoly",
@@ -18,16 +19,16 @@ function App() {
         id: 3
       }
 
-    ]
+    ])
 
   return (
     <>
       <div className="container">
-        <AddArtcles />
+        <AddArtcles array={boardGames} setArray={setBoardGames} />
         <div className="col sm-6">
           <div className="card mt-5 pt-3">
             <h5 className='px-3'>LIST OF FAVORITE BOARD GAMES: </h5>
-            <ArticlesList articles={boardGames} />
+            <ArticlesList array={boardGames} />
           </div>
         </div>
 

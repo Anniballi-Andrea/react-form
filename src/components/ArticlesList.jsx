@@ -1,4 +1,4 @@
-export default function ArticlesList({ articles }) {
+export default function ArticlesList({ array }) {
 
 
 
@@ -6,7 +6,7 @@ export default function ArticlesList({ articles }) {
     return (
         <ul className="list-group">
             {
-                articles.map((el) => (
+                array.map((el) => (
                     <li key={el.id} className="list-group-item"><strong>{el.name}</strong></li>
                 ))
             }

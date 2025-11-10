@@ -1,15 +1,24 @@
 import { useState } from "react"
 
-export default function AddArtcles() {
+export default function AddArtcles({ array, setArray }) {
 
-    const [article, setArticle] = useState("Aggiungi un gioco")
+    const [article, setArticle] = useState("")
 
 
+    const handleAddObject = event => {
+        event.preventDefault()
+
+        const newArticles = [...array, { name: article, id: array.length + 1 }]
+        setArray(newArticles)
+
+
+
+    }
 
 
 
     return (
-        <form >
+        <form onSubmit={handleAddObject}>
             <div className="input-group mt-5">
                 <input
                     type="text"
@@ -18,7 +27,7 @@ export default function AddArtcles() {
                     onChange={e => { setArticle(e.target.value) }}
 
                 />
-                <button className="btn btn-outline-secondary" type="button">Confirm</button>
+                <button className="btn btn-outline-secondary" type="submit">Confirm</button>
             </div>
         </form>
     )
