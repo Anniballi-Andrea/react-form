@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 export default function AddArtcles() {
+
+    const [article, setArticle] = useState("Aggiungi un gioco")
 
 
 
@@ -6,9 +10,15 @@ export default function AddArtcles() {
 
     return (
         <form >
-            <div class="input-group mt-5">
-                <input type="text" class="form-control" ></input>
-                <button class="btn btn-outline-secondary" type="button">Confirm</button>
+            <div className="input-group mt-5">
+                <input
+                    type="text"
+                    className="form-control"
+                    value={article}
+                    onChange={e => { setArticle(e.target.value) }}
+
+                />
+                <button className="btn btn-outline-secondary" type="button">Confirm</button>
             </div>
         </form>
     )
