@@ -1,3 +1,4 @@
+import ArticlesList from "./components/ArticlesList"
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       },
       {
         name: "risiko",
-        id: 2
+        id: 3
       }
 
     ]
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
       <div className="container">
+        <ArticlesList articles={games} />
 
       </div>
     </>
