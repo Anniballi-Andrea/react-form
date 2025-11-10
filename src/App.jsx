@@ -1,8 +1,9 @@
+import AddArtcles from "./components/AddArticles"
 import ArticlesList from "./components/ArticlesList"
 
 function App() {
 
-  const games =
+  const boardGames =
     [
       {
         name: "monopoly",
@@ -22,7 +23,13 @@ function App() {
   return (
     <>
       <div className="container">
-        <ArticlesList articles={games} />
+        <AddArtcles />
+        <div className="col sm-6">
+          <div className="card mt-5 pt-3">
+            <h5>LIST OF FAVORITE BOARD GAMES: </h5>
+            <ArticlesList articles={boardGames} />
+          </div>
+        </div>
 
       </div>
     </>
